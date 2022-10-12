@@ -9,7 +9,7 @@
           <div class="w-56 items-center flex">
             {{-- Mengubah logo menjadi dapat di klik ke home (index) dengan mengunakan routing --}}
            <a href="{{route('index')}}"> <img
-              src="{{url('/frontend/images/content/logo.png')}}"
+              src="{{url('/frontend/images/content/logos.png')}}"
               alt="Luxspace | Fulfill your house with beautiful furniture"
             /></a>
           </div>
