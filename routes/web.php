@@ -46,6 +46,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             'index', 
             'show', 
         ]);
+        
 
     //middleware khusus untuk admin yang bisa masuk
     Route::middleware(['admin'])->group(function(){
@@ -67,6 +68,9 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             'edit',
             'update',
             'destroy'
+        ]);
+        Route::resource('hpp', ProductController::class)->only([
+            'create',
         ]);
     });
 });
