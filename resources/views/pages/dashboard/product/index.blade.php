@@ -4,16 +4,16 @@
               Mixing
           </h2>
       </x-slot>
-      <div class="mt-5">
-          <a href="{{ route('dashboard.product.create') }}"
-              class="bg-pink-400 text-black hover:bg-black hover:text-pink-400 focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-6">
-              + Tambah Pakan
-          </a>
-      </div>
       <!-- START: COMPLETE YOUR ROOM -->
       <section class="md:py-16">
 
           <div class="container mx-auto px-4">
+              <div class="mt-5">
+                  <a href="{{ route('dashboard.product.create') }}" style="background-color: #064e3b; color:white"
+                      class=" bg-green-900 text-black hover:bg-black hover:text-green-400 focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-6">
+                      + Tambah Pakan
+                  </a>
+              </div>
               <div class="flex -mx-4 flex-wrap">
                   <div class="w-full px-4 mb-4 md:w-8/12 md:mb-0" id="shopping-cart">
                       <div class="flex flex-start mb-4 mt-8 pb-3 border-b border-gray-200 md:border-b-0">
@@ -101,7 +101,7 @@
                               </div>
 
                               <div class="text-center">
-                                  <button type="submit"
+                                  <button type="submit" style="background-color:#064e3b; color:white;"
                                       class="bg-pink-400 text-black hover:bg-black hover:text-pink-400 focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-6">
                                       Hitung Harga Ransum
                                   </button>
