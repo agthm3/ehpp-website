@@ -19,12 +19,17 @@
                 @if (Auth::user()->roles == 'ADMIN')
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('dashboard.product.index') }}" :active="request()->routeIs('dashboard.product.index')">
-                                {{ __('Products ') }}
+                                {{ __('Mixing ') }}
                             </x-jet-nav-link>
                         </div>  
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-jet-nav-link href="{{ route('dashboard.transaction.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
-                                {{ __('Transaction ') }}
+                                {{ __('Pakan ') }}
+                            </x-jet-nav-link>
+                        </div>      
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-jet-nav-link href="{{ route('dashboard.user.index') }}" :active="request()->routeIs('dashboard.user  .index')">
+                                {{ __('Pakan ') }}
                             </x-jet-nav-link>
                         </div>  
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
