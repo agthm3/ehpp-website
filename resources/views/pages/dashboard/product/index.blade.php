@@ -9,7 +9,7 @@
 
           <div class="container mx-auto px-4">
               <div class="mt-5">
-                  <a href="{{ route('dashboard.product.create') }}" style="background-color: #064e3b; color:white"
+                  <a href="{{ route('dashboard.pakan.create') }}" style="background-color: #064e3b; color:white"
                       class=" bg-green-900 text-black hover:bg-black hover:text-green-400 focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-6">
                       + Tambah Pakan
                   </a>

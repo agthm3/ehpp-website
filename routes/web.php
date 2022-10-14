@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\MyTransactionController;
+use App\Http\Controllers\PakanController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
 use App\Http\Controllers\TransactionController;
@@ -70,6 +71,9 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             'destroy'
         ]);
         Route::resource('hpp', ProductController::class)->only([
+            'create',
+        ]);
+        Route::resource('pakan', PakanController::class)->only([
             'create',
         ]);
     });
