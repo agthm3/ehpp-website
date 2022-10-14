@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePakanTable extends Migration
+class CreatePakansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePakanTable extends Migration
      */
     public function up()
     {
-        Schema::create('pakan', function (Blueprint $table) {
+        Schema::create('pakans', function (Blueprint $table) {
                       #membuat tabel untuk product (berdasarkan ERD)
             $table->string('name');
             $table->longText('description');
@@ -37,6 +37,6 @@ class CreatePakanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pakan');
+        Schema::dropIfExists('pakans');
     }
 }

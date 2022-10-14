@@ -75,6 +75,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
         ]);
         Route::resource('pakan', PakanController::class)->only([
             'create',
+            'store'
         ]);
     });
 });

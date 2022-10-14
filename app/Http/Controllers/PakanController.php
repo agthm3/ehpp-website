@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use App\Http\Requests\PakanRequest;
+use App\Models\Pakan;
+
 
 class PakanController extends Controller
 {
@@ -34,7 +38,12 @@ class PakanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $data['slug']= Str::slug($request->name);
+
+        Pakan::create($data);
+
+        return redirect()->route('dashboard.product.index');
     }
 
     /**
