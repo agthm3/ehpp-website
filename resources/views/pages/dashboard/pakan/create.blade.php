@@ -36,13 +36,13 @@
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3 ">
                             <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                Name
+                                Nama
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
                             <input type="text" value="{{ old('name') }}" name="name"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="Product Name">
+                                placeholder="Nama Pakan">
                         </div>
                     </div>
 
@@ -61,21 +61,113 @@
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
                             <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                Price
+                                Harga
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
                             <input type="number" value="{{ old('price') }}" name="price"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="Product Price">
+                                placeholder=" ">
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Protein
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('price') }}" name="price"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder=" ">
                         </div>
                     </div>
 
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
-                            <button type="submit"
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Lemak
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('price') }}" name="price"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder=" ">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Serat
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('price') }}" name="price"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder=" ">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Energi
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('price') }}" name="price"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder=" ">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Ca
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('price') }}" name="price"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder=" ">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                P
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('price') }}" name="price"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder=" ">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Mixing
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('price') }}" name="price"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder=" ">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <button type="submit" style="background-color:#064e3b"
                                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg">
-                                Save Product
+                                Simpan Pakan
                             </button>
                         </div>
                     </div>
