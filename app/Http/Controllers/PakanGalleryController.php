@@ -2,49 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PakanGallery;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
-use App\Http\Requests\PakanRequest;
-use App\Models\Pakan;
+use App\Http\Controllers\PakanController;
 use Yajra\DataTables\DataTables;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\PakanGalleryRequest;
+use App\Models\Pakan;
 
-class PakanController extends Controller
+class PakanGalleryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-     public function index()
+    public function index(Pakan $pakan)
     {
-        if(request()->ajax()){
-            $query = Pakan::query();
+         if(request()->ajax()){
+            $query = PakanGallery::where('pakans_id', $pakan->id );
             return DataTables::of($query)
                     //Menambah tombol untuk mengedit isi kolom
                     ->addColumn('action', function($item){
-                        return ' 
-                          <a href="'.route('dashboard.pakan.gallery.index', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Gallery </a>
-                            <a href="'.route('dashboard.pakan.gallery.index', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Gallery </a>
-                            <a href="'.route('dashboard.pakan.gallery.index', $item->id) . '" class="bg-green-500 text-white rounded-md px-2 py-1 m-2"s> Edit </a>
-                            <form class="inline-block bg-grey-500 text-white rounded-md px-2 py-1 m-2" action="'.route('dashboard.product.destroy', $item->id).'" method="POST">
+                        return '
+                            <form class="inline-block bg-grey-500 text-white rounded-md px-2 py-1 m-2" action="'.route('dashboard.gallery.destroy', $item->id).'" method="POST">
                                 <button class="bg-red-500 text-white rounded-md px-2 py-1 m-2">
                                     Hapus
                                 </button>
                             '.method_field('delete'). csrf_field().' 
                             </form>
-                        
                         ';
                     })
                     //menambahkan koma pada kolom price
-                    ->editColumn('price', function($item){
-                        return number_format($item->price);
+                    ->editColumn('url', function($item){
+                        return '<img style="max-widht:150px" src="'. Storage::url($item->url).'"/>';
                     })
-                    ->rawColumns(['action'])
+                    ->editColumn('is_featured', function($item){
+                        return $item->is_feature ? 'Yes': 'No';
+                    })
+                    //menambahkan tag url untuk memunculkan gambar 
+                    ->rawColumns(['action', 'url'])
                     -> make();
+                    
         }
- 
-        return view('pages.dashboard.pakan.index');
+        return view('pages.dashboard.gallery.index', compact('pakan'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -52,7 +55,7 @@ class PakanController extends Controller
      */
     public function create()
     {
-         return view('pages.dashboard.pakan.create');
+        //
     }
 
     /**
@@ -63,13 +66,7 @@ class PakanController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        $data['slug']= Str::slug($request->name);
-
-        Pakan::create($data);
-
-        // return ($data);
-        return redirect()->route('dashboard.pakan.index');
+        //
     }
 
     /**

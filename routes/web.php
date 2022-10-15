@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\MyTransactionController;
 use App\Http\Controllers\PakanController;
+use App\Http\Controllers\PakanGalleryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
 use App\Http\Controllers\TransactionController;
@@ -73,9 +74,12 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
         Route::resource('hpp', ProductController::class)->only([
             'create',
         ]);
-        Route::resource('pakan', PakanController::class)->only([
-            'create',
-            'store'
+        Route::resource('pakan', PakanController::class);
+        Route::resource('pakan.gallery', PakanGalleryController::class)->shallow()->only([
+            'index', 
+            'create', 
+            'store',
+            'destroy'
         ]);
     });
 });

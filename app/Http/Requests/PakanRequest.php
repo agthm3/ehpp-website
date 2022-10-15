@@ -24,14 +24,7 @@ class PakanRequest extends FormRequest
      */
     public function rules()
     {
-              //memasukkan validasi menggunakan form request 
-        return [
-            'name'=> 'required|max:255',
-            'description' => 'required',
-            'price'=>'required|integer', 
-            'description' => 'required|string', 
-            'protein' => 'required|integer|max:10',
-        ];
+   
         return [
             'name'=> 'required|max:255',
             'description' => 'required',

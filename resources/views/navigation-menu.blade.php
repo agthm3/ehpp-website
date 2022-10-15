@@ -23,7 +23,7 @@
                         </x-jet-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('dashboard.transaction.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
+                        <x-jet-nav-link href="{{ route('dashboard.pakan.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
                             {{ __('Pakan ') }}
                         </x-jet-nav-link>
                     </div>
