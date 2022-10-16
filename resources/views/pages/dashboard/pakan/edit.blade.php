@@ -28,7 +28,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('dashboard.product.update', $item->id) }}" class="w-full" method="post"
+                <form action="{{ route('dashboard.pakan.update', $item->id) }}" class="w-full" method="post"
                     enctype="multipart/form-data">
                     {{-- setiap inputan tambahkan csrf --}}
                     @csrf
@@ -45,7 +45,7 @@
                             <input type="text" value="{{ old('name') ?? $item->name }}" name="name"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="Product Name">
+                                placeholder="Pakan Name">
                         </div>
                     </div>
 
@@ -70,7 +70,7 @@
                             <input type="number" value="{{ old('price') ?? $item->price }}" name="price"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="Product Price">
+                                placeholder="Pakan Price">
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-6">
@@ -162,7 +162,7 @@
                         <div class="w-full px-3">
                             <button type="submit"
                                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg">
-                                Update Product
+                                Update Pakan
                             </button>
                         </div>
                     </div>

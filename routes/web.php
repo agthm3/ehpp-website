@@ -80,6 +80,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             'create',
             'store',
             'destroy',
+            'update',
             'show'
             
         ]);
