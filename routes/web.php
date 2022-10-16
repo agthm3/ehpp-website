@@ -54,7 +54,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
     //middleware khusus untuk admin yang bisa masuk
     Route::middleware(['admin'])->group(function(){
         Route::resource('mixing', ProductController::class);
-        Route::resource('product.gallery', ProductGalleryController::class)->shallow()->only([
+        Route::resource('mixing.gallery', ProductGalleryController::class)->shallow()->only([
             'index', 
             'create', 
             'store',

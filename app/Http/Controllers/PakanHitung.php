@@ -13,7 +13,15 @@ class PakanHitung extends Controller
      */
     public function index()
     {
-        return re
+
+        return '<form action="{{route("cart-add", $pakan->id)}}" method="POST">
+            @csrf
+            <button
+            type="submit"
+            class="transition-all duration-200 bg-pink-400 text-black focus:bg-black focus:text-pink-400 rounded-full px-8 py-3 mt-4 inline-flex"
+            >
+            Add to Cart</button>
+          </form>';
     }
 
     /**
