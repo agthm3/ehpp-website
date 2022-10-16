@@ -5,6 +5,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\MyTransactionController;
 use App\Http\Controllers\PakanController;
 use App\Http\Controllers\PakanGalleryController;
+use App\Http\Controllers\PakanHitung;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
 use App\Http\Controllers\TransactionController;
@@ -52,7 +53,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
 
     //middleware khusus untuk admin yang bisa masuk
     Route::middleware(['admin'])->group(function(){
-        Route::resource('product', ProductController::class);
+        Route::resource('mixing', ProductController::class);
         Route::resource('product.gallery', ProductGalleryController::class)->shallow()->only([
             'index', 
             'create', 
@@ -73,7 +74,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
         ]);
         Route::resource('hpp', ProductController::class)->only([
             'create',
-        ]);
+        ]);  
         Route::resource('pakan', PakanController::class)->only([
             'index',
             'hitung',
@@ -86,6 +87,10 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             
             
         ]);
+       Route::resource('hitung', PakanHitung::class)->only([
+            'index',
+        ]);
+     
         Route::resource('pakan.gallery', PakanGalleryController::class)->shallow()->only([
             'index', 
             'create', 

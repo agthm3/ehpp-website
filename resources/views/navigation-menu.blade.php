@@ -18,7 +18,7 @@
                 </div>
                 @if (Auth::user()->roles == 'ADMIN')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('dashboard.product.index') }}" :active="request()->routeIs('dashboard.product.index')">
+                        <x-jet-nav-link href="{{ route('dashboard.mixing.index') }}" :active="request()->routeIs('dashboard.mixing.index')">
                             {{ __('Mixing ') }}
                         </x-jet-nav-link>
                     </div>
@@ -181,7 +181,7 @@
         @if (Auth::user()->roles == 'ADMIN')
             {
             <div class="pt-2 pb-3 space-y-1">
-                <x-jet-responsive-nav-link href="{{ route('dashboard.product.index') }}" :active="request()->routeIs('dashboard.product.index')">
+                <x-jet-responsive-nav-link href="{{ route('dashboard.mixing.index') }}" :active="request()->routeIs('dashboard.mixing.index')">
                     {{ __('Products') }}
                 </x-jet-responsive-nav-link>
             </div>

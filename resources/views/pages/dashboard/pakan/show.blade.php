@@ -79,33 +79,34 @@
                 </div>
             </div>
             <h2 class="font-semibold text-lg text-gray-800 leading-tight mb-5">Kandungan Nutrisi</h2>
+            <p class="muted-text">Kandungan Nutrisi terhitung otomatis</p>
             <div class="bg-white overflow-hidden shadow sm:rounded-lg mb-10">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="table-auto w-full">
                         <tbody>
                             <tr>
                                 <th class="border px-6 py-4 text-right">Protein</th>
-                                <td class="border px-6 py-4 ">{{ $pakan->protein }}%</td>
+                                <td class="border px-6 py-4 ">{{ $pakan->gprotein }}%</td>
                             </tr>
                             <tr>
                                 <th class="border px-6 py-4 text-right">Lemak</th>
-                                <td class="border px-6 py-4 ">{{ $pakan->lemak }}%</td>
+                                <td class="border px-6 py-4 ">{{ $pakan->glemak }}%</td>
                             </tr>
                             <tr>
-                                <th class="border px-6 py-4 text-right">Serat</th>
-                                <td class="border px-6 py-4 ">{{ $pakan->serat }}%</td>
+                                <th class="border px-6 py-4 text-right">S.Serat</th>
+                                <td class="border px-6 py-4 ">{{ $pakan->gserat }}%</td>
                             </tr>
                             <tr>
                                 <th class="border px-6 py-4 text-right">Energi</th>
-                                <td class="border px-6 py-4 ">{{ $pakan->energi }}%</td>
+                                <td class="border px-6 py-4 ">{{ $pakan->genergi }}%</td>
                             </tr>
                             <tr>
                                 <th class="border px-6 py-4 text-right">Ca</th>
-                                <td class="border px-6 py-4 ">{{ $pakan->ca }}%</td>
+                                <td class="border px-6 py-4 ">{{ $pakan->gca }}%</td>
                             </tr>
                             <tr>
                                 <th class="border px-6 py-4 text-right">P</th>
-                                <td class="border px-6 py-4 ">{{ $pakan->p }}%</td>
+                                <td class="border px-6 py-4 ">{{ $pakan->gp }}%</td>
                             </tr>
                         </tbody>
                     </table>
