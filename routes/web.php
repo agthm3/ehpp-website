@@ -76,12 +76,14 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
         ]);
         Route::resource('pakan', PakanController::class)->only([
             'index',
+            'hitung',
             'edit',
             'create',
             'store',
             'destroy',
             'update',
-            'show'
+            'show',
+            
             
         ]);
         Route::resource('pakan.gallery', PakanGalleryController::class)->shallow()->only([

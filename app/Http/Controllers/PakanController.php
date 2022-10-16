@@ -23,10 +23,7 @@ class PakanController extends Controller
                     //Menambah tombol untuk mengedit isi kolom
                     ->addColumn('action', function($item){
                         return ' 
-                                
-                          
                           <a href="'.route('dashboard.pakan.show', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Detail </a>
-                            <a href="'.route('dashboard.pakan.gallery.index', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Gallery </a>
                             <a href="'.route('dashboard.pakan.edit', $item->id) . '" class="bg-green-500 text-white rounded-md px-2 py-1 m-2"s> Edit </a>
                             <form class="inline-block bg-grey-500 text-white rounded-md px-2 py-1 m-2" action="'.route('dashboard.pakan.destroy', $item->id).'" method="POST">
                                 <button class="bg-red-500 text-white rounded-md px-2 py-1 m-2">
@@ -76,7 +73,7 @@ class PakanController extends Controller
         return redirect()->route('dashboard.pakan.index');
     }
 
-    public function hitung(Request $request){
+    public function hitung(Request $request, Pakan $pakan){
         return 'flkjasd';
     }
 
@@ -89,16 +86,19 @@ class PakanController extends Controller
     public function show(Pakan $pakan)
     {
                  if(request()->ajax()){
-            $query = TransactionItem::with(['product'])->where('transactions_id', $transaction->id);
+        
             return DataTables::of($query)
                     //relasi product price
-                    ->editColumn('product.price', function($item){
-                        return number_format($item->product->price);
+                    ->editColumn('pakan.price', function($item){
+                        return number_format($item->pakan->price);
                     })
                     ->rawColumns(['action'])
                     -> make();
         }
-         return view('pages.dashboard.pakan.show', compact('pakan'));
+         return view('pages.dashboard.pakan.show', [
+            'pakan' => $pakan, 
+            'item' => $pakan
+         ]);
     }
 
     /**
