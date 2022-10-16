@@ -58,6 +58,10 @@ class PakanGalleryController extends Controller
         //
     }
 
+    public function hitung(){
+        //
+    }
+
     /**
      * Store a newly created resource in storage.
      *

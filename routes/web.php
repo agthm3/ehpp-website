@@ -74,12 +74,21 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
         Route::resource('hpp', ProductController::class)->only([
             'create',
         ]);
-        Route::resource('pakan', PakanController::class);
+        Route::resource('pakan', PakanController::class)->only([
+            'index',
+            'edit',
+            'create',
+            'store',
+            'destroy',
+            'show'
+            
+        ]);
         Route::resource('pakan.gallery', PakanGalleryController::class)->shallow()->only([
             'index', 
             'create', 
             'store',
-            'destroy'
+            'destroy',
+            'hitung'
         ]);
     });
 });

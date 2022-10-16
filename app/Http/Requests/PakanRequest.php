@@ -36,6 +36,14 @@ class PakanRequest extends FormRequest
             'energi' => 'required|integer|max:10',
             'ca' => 'required|integer|max:10',
             'p' => 'required|integer|max:10',
+            'mixing'=> 'required|integer|max:10',
+            'gprotein' => 'integer',
+            'glemak'=>'integer',
+            'gkasar' => 'integer',
+            'generg'=> 'integer',
+            'gca'=> 'integer',
+            'gp'=>'integer'
+
         ];
     }
 }

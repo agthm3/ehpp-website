@@ -19,6 +19,17 @@ class Pakan extends Model
         'energi',
         'ca',
         'p',
-        'slug'
+        'mixing',
+        'slug',
+        'gprotein',
+        'glemak',
+        'gkasar',
+        'generg',
+        'gca',
+        'gp'
     ];
+    public function galleries(){
+        return $this->hasMany(PakanGallery::class, 'pakans_id', 'id' );
+    }
+
 }

@@ -67,7 +67,7 @@
                             <input type="number" value="{{ old('price') }}" name="price"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder=" ">
+                                placeholder="Rp">
                         </div>
                     </div>
 
@@ -81,7 +81,7 @@
                             <input type="number" value="{{ old('protein') }}" name="protein"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder=" ">
+                                placeholder="   %">
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@
                             <input type="number" value="{{ old('lemak') }}" name="lemak"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder=" ">
+                                placeholder="   %">
                         </div>
                     </div>
 
@@ -107,7 +107,7 @@
                             <input type="number" value="{{ old('serat') }}" name="serat"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder=" ">
+                                placeholder="   %">
                         </div>
                     </div>
 
@@ -120,7 +120,7 @@
                             <input type="number" value="{{ old('energi') }}" name="energi"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder=" ">
+                                placeholder="   %">
                         </div>
                     </div>
 
@@ -133,7 +133,7 @@
                             <input type="number" value="{{ old('ca') }}" name="ca"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder=" ">
+                                placeholder="   %">
                         </div>
                     </div>
 
@@ -146,22 +146,24 @@
                             <input type="number" value="{{ old('p') }}" name="p"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder=" ">
+                                placeholder="   % ">
                         </div>
                     </div>
 
-                    {{-- <div class="flex flex-wrap -mx-3 mb-6">
+
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
                             <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
                                 Mixing
                             </label>
 
-                            <input type="number" value="{{ old('price') }}" name="price"
+                            <input type="number" value="{{ old('mixing') }}" name="mixing"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder=" ">
+                                placeholder="   Kg">
                         </div>
-                    </div> --}}
+                    </div>
 
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
