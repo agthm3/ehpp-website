@@ -27,7 +27,7 @@ class PakanController extends Controller
                           
                           <a href="'.route('dashboard.pakan.show', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Detail </a>
                             <a href="'.route('dashboard.pakan.gallery.index', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Gallery </a>
-                            <a href="'.route('dashboard.pakan.gallery.index', $item->id) . '" class="bg-green-500 text-white rounded-md px-2 py-1 m-2"s> Edit </a>
+                            <a href="'.route('dashboard.pakan.edit', $item->id) . '" class="bg-green-500 text-white rounded-md px-2 py-1 m-2"s> Edit </a>
                             <form class="inline-block bg-grey-500 text-white rounded-md px-2 py-1 m-2" action="'.route('dashboard.pakan.destroy', $item->id).'" method="POST">
                                 <button class="bg-red-500 text-white rounded-md px-2 py-1 m-2">
                                     Hapus
@@ -107,9 +107,11 @@ class PakanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Pakan $pakan)
     {
-        //
+        return view('pages.dashboard.pakan.edit', [
+            'item' => $pakan
+        ]);
     }
 
     /**
