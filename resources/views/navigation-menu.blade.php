@@ -28,7 +28,7 @@
                         </x-jet-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('dashboard.hpp.create') }}" :active="request()->routeIs('dashboard.user  .index')">
+                        <x-jet-nav-link href="{{ route('dashboard.hpp.create') }}" :active="request()->routeIs('dashboard.hpp  .index')">
                             {{ __('HPP ') }}
                         </x-jet-nav-link>
                     </div>

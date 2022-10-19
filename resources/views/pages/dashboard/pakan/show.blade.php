@@ -86,19 +86,23 @@
                         <tbody>
                             <tr>
                                 <th class="border px-6 py-4 text-right">Protein</th>
-                                <td class="border px-6 py-4 ">{{ $pakan->gprotein }}%</td>
+                                <td class="border px-6 py-4 ">{{ $pakan->gprotein }}%
+                                </td>
                             </tr>
                             <tr>
                                 <th class="border px-6 py-4 text-right">Lemak</th>
-                                <td class="border px-6 py-4 ">{{ $pakan->glemak }}%</td>
+                                <td class="border px-6 py-4 ">{{ $pakan->glemak }}%
+                                </td>
                             </tr>
                             <tr>
                                 <th class="border px-6 py-4 text-right">S.Serat</th>
-                                <td class="border px-6 py-4 ">{{ $pakan->gserat }}%</td>
+                                <td class="border px-6 py-4 ">{{ $pakan->gkasar }}%
+                                </td>
                             </tr>
                             <tr>
                                 <th class="border px-6 py-4 text-right">Energi</th>
-                                <td class="border px-6 py-4 ">{{ $pakan->genergi }}%</td>
+                                <td class="border px-6 py-4 ">{{ $pakan->genergi }}%
+                                </td>
                             </tr>
                             <tr>
                                 <th class="border px-6 py-4 text-right">Ca</th>

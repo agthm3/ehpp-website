@@ -62,14 +62,59 @@ class PakanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Pakan $pakan)
     {
-        $data = $request->all();
-       
+        $data = new Pakan;
+
+        $protein = $request->protein;
+        $lemak = $request->lemak;
+        $serat = $request->serat;
+        $energi = $request->energi;
+        $ca = $request->ca;
+        $p = $request->p;
+        $mixing = $request->mixing;
+        $gprotein = ((int)$protein * $mixing)/10000;
+        $glemak = ((int)$lemak * $mixing)/10000;
+        $gserat = ((int)$serat * $mixing)/10000;
+        $genergi = ((int)$energi * $mixing)/10000;
+        $gca = ((int)$ca * $mixing)/10000;
+        $gp = ((int)$p * $mixing)/10000;
+        
         $data['slug']= Str::slug($request->name);
+        $data->name = $request->name;
+        $data->description = $request->description;
+        $data->price = $request->price;
+        $data->protein = $request->protein;
+        $data->lemak = $request->lemak;
+        $data->serat = $request->serat;
+        $data->energi = $request->energi;
+        $data->ca = $request->ca;
+        $data->p = $request->p;
+        $data-> mixing = $request->mixing;
+        
+       
+     
 
-        Pakan::create($data);
+        $data->gprotein = $gprotein;
+        $data->glemak = $glemak;
+        $data->gkasar = $gserat;
+        $data->genergi = $genergi;
+        $data->gca = $gca;
+        $data->gp = $gp;
+        
 
+        // return dd($data);
+        // Pakan::create($data);
+        // $mix = $request->mixing;
+        // $prote = $request->protein;
+        // $desc = $request->description;  
+        // $gprotein = ((int)$mix*$prote)/10000;
+
+        // $data['gprotein'] = $gprotein;       
+        // $data['desc']= $desc;
+
+
+        $data->save();
         // return ($data);
         return redirect()->route('dashboard.pakan.index');
     }
@@ -98,7 +143,7 @@ class PakanController extends Controller
         }
          return view('pages.dashboard.pakan.show', [
             'pakan' => $pakan, 
-            'item' => $pakan
+            'item' => $pakan,
          ]);
     }
 

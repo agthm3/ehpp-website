@@ -28,7 +28,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('dashboard.product.store') }}" class="w-full" method="post"
+                <form action="{{ route('dashboard.pakan.store') }}" class="w-full" method="post"
                     enctype="multipart/form-data">
                     {{-- setiap inputan tambahkan csrf --}}
                     @csrf

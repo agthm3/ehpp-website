@@ -37,12 +37,12 @@ class PakanRequest extends FormRequest
             'ca' => 'required|integer|max:10',
             'p' => 'required|integer|max:10',
             'mixing'=> 'required|integer|max:10',
-            'gprotein' => 'integer',
-            'glemak'=>'integer',
-            'gkasar' => 'integer',
-            'generg'=> 'integer',
-            'gca'=> 'integer',
-            'gp'=>'integer'
+            'gprotein' => 'between:0,9999|required',
+            'glemak'=>'between:0,9999|required',
+            'gkasar' => 'between:0,9999|required',
+            'generg'=> 'between:0,9999|required',
+            'gca'=> 'between:0,9999|required',
+            'gp'=>'between:0,9999|required'
 
         ];
     }
