@@ -14,6 +14,7 @@ class CreatePakansTable extends Migration
     public function up()
     {
         Schema::create('pakans', function (Blueprint $table) {
+             $table->id();
                       #membuat tabel untuk product (berdasarkan ERD)
             $table->string('name');
             $table->longText('description');

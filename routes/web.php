@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\MixingController;
 use App\Http\Controllers\MyTransactionController;
 use App\Http\Controllers\PakanController;
 use App\Http\Controllers\PakanGalleryController;
@@ -26,6 +27,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('/details/{slug}',[FrontendController::class, 'details'] )->name('details');
 
+
     
 
 require __DIR__.'/auth.php';
@@ -36,6 +38,8 @@ require __DIR__.'/auth.php';
         Route::delete('/cart/{id}', [FrontendController::class, 'cartDelete'])->name('cart-delete');
         Route::post('/checkout', [FrontendController::class, 'checkout'])->name('checkout');
         Route::get('/checkout/success', [FrontendController::class, 'success'])->name('checkout-success');
+   
+    
     });
 
 
@@ -53,6 +57,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
 
     //middleware khusus untuk admin yang bisa masuk
     Route::middleware(['admin'])->group(function(){
+        // Route::resource('mixing', FrontendController::class);
         Route::resource('mixing', ProductController::class);
         Route::resource('mixing.gallery', ProductGalleryController::class)->shallow()->only([
             'index', 
@@ -65,6 +70,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             'show', 
             'edit',
             'update'
+            
         ]);
         Route::resource('user', UserController::class)->only([
             'index', 
@@ -98,5 +104,6 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             'destroy',
             'hitung'
         ]);
+
     });
 });

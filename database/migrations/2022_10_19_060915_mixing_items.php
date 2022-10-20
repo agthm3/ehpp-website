@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddIdColumnToPakans extends Migration
+class MixingItems extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AddIdColumnToPakans extends Migration
      */
     public function up()
     {
-        Schema::table('pakans', function (Blueprint $table) {
-            $table->string('id')->nullable()->before('name');
+        Schema::create('mixing_items', function (Blueprint $table) {
+            $table->id();
+
+            $table->bigInteger('users_id');
+            $table->bigInteger('pakans_id');
+            $table->bigInteger('mixing_id');
+            $table->timestamps();
         });
     }
 
@@ -25,6 +30,6 @@ class AddIdColumnToPakans extends Migration
      */
     public function down()
     {
-Schema::dropIfExists('id');
+            Schema::dropIfExists('mixing_items');
     }
 }

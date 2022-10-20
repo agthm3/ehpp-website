@@ -24,16 +24,8 @@ class TransactionController extends Controller
                     //Menambah tombol untuk mengedit isi kolom
                     ->addColumn('action', function($item){
                         return '
-                            <a href="'.route('dashboard.transaction.show', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Hitung </a>
-                            <a href="'.route('dashboard.transaction.show', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Detail </a>
-                            <a href="'.route('dashboard.transaction.show', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Gallery </a>
-                            <a href="'.route('dashboard.transaction.show', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Edit </a>
-                            <form class="inline-block bg-grey-500 text-white rounded-md px-2 py-1 m-2" action="'.route('dashboard.product.destroy', $item->id).'" method="POST">
-                                <button class="bg-red-500 text-white rounded-md px-2 py-1 m-2">
-                                    Hapus
-                                </button>
-                            '.method_field('delete'). csrf_field().' 
-                            </form>
+                            <a href="'.route('dashboard.transaction.show', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Show </a>
+                            <a href="'.route('dashboard.transaction.edit', $item->id) . '" class="bg-green-500 text-white rounded-md px-2 py-1 m-2"s> Edit </a>
                         ';
                     })
                     //menambahkan koma pada kolom price

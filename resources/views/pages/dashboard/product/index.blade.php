@@ -46,16 +46,31 @@
                       </div>
 
 
-
-
-
-
-                  </div>
-                  <div class="w-full md:px-4 md:w-4/12" id="shipping-detail">
+                      <br>
+                      <br><br><br>
+                      <hr>
+                      <br>
                       <div class="bg-gray-100 px-4 py-6 md:p-8 md:rounded-3xl">
                           <form action="{{ route('checkout') }}" method="POST">
                               @csrf
+                              <div class="text-center">
+                                  <button type="submit" style="background-color:#064e3b; color:white;"
+                                      class="bg-pink-400 text-black hover:bg-black hover:text-pink-400 focus:outline-none w-full py-3 rounded-full text-lg focus:text-black transition-all duration-200 px-6">
+                                      Hitung Harga Ransum
+                                  </button>
+                              </div>
+                          </form>
+                      </div>
 
+
+                  </div>
+
+                  {{-- Tombol hitung ransum dari samping --}}
+                  {{-- <div class="w-full md:px-4 md:w-4/12" id="shipping-detail">
+                      <div class="bg-gray-100 px-4 py-6 md:p-8 md:rounded-3xl">
+                          <form action="{{ route('checkout') }}" method="POST">
+                              @csrf
+                              
                               <div class="flex flex-start mb-6">
                                   <h3 class="text-2xl">Detail Nutrisi</h3>
                               </div>
@@ -108,7 +123,7 @@
                               </div>
                           </form>
                       </div>
-                  </div>
+                  </div> --}}
               </div>
           </div>
 

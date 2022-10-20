@@ -23,7 +23,6 @@ class PakanController extends Controller
                     //Menambah tombol untuk mengedit isi kolom
                     ->addColumn('action', function($item){
                         return ' 
-                         <a href="'.route('dashboard.hitung.index', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Hitung </a>
                           <a href="'.route('dashboard.pakan.show', $item->id) . '"  class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Detail </a>
                             <a href="'.route('dashboard.pakan.edit', $item->id) . '" class="bg-green-500 text-white rounded-md px-2 py-1 m-2"s> Edit </a>
                             <form class="inline-block bg-grey-500 text-white rounded-md px-2 py-1 m-2" action="'.route('dashboard.pakan.destroy', $item->id).'" method="POST">

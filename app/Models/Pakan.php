@@ -10,6 +10,7 @@ class Pakan extends Model
 {
     use HasFactory, SoftDeletes;
         protected $fillable = [
+             
         'name', 
         'price', 
         'description', 
