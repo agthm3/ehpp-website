@@ -33,4 +33,10 @@ class Pakan extends Model
         return $this->hasMany(PakanGallery::class, 'pakans_id', 'id' );
     }
 
+    public function carts(){
+        return $this->hasMany(Cart::class);
+    }
+      public function total_semua_pakans(){
+        return $this->hasOne(totalSemuaPakan::class);
+    }
 }

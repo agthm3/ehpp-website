@@ -20,7 +20,7 @@ class FrontendController extends Controller
     #return view ke index
     public function index(Request $request){
         $pakans = Pakan::with(['galleries'])->latest()->get();
-        return view('product.index', compact('pakans'));
+        return view('pages.frontend.index', compact('pakans'));
     }
 
     public function details(Request $request, $slug){
@@ -29,7 +29,15 @@ class FrontendController extends Controller
         return view('dashboard.pakan.show', compact('pakan'));
     }
 
- 
+    public function cartAdd(Request $request, $id){
+        Cart::create([
+            'users_id' =>Auth::user()->id, 
+            'pakans_id' => $id
+        ]);
+
+        return redirect('cart');
+    }
+
   
   
 

@@ -37,9 +37,9 @@
 
             <h2 class="font-semibold text-lg text-gray-800 leading-tight mb-5">Pakan Detail</h2>
             <br>
-            <form action="{{ route('cart-add', $pakan->id) }}" method="POST">
+            <form action="{{ route('cart-add') }}" method="POST">
                 @csrf
-                @method('POST')
+                <input type="hidden" name="idPakan" value="{{ $pakan->id }}">
                 <button class="bg-green-500 text-white rounded-md px-6 py-1 m-2" type="submit">Hitung</button>
             </form>
             <br>
