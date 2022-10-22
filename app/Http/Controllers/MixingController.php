@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Mixing;
 use App\Models\Pakan;
 use App\Models\cart;
+use App\Models\Record;
 use App\Models\totalPerPakan;
 use App\Models\totalSemuaPakan;
 use Illuminate\Support\Facades\Auth;
@@ -75,6 +76,7 @@ class MixingController extends Controller
     
    
      $user_id = auth()->user()->id;
+     $record_id = time().'MIXING';
    
     $glemak = [];
    
@@ -93,6 +95,7 @@ class MixingController extends Controller
        
     }
         $protein_total = array_sum($gprotein);
+
         $mixing_total = array_sum($mixingkg);
         $protein_mixing = ($protein_total/$mixing_total) *100;
 
@@ -125,8 +128,9 @@ class MixingController extends Controller
         
         $hasil = $harga * $harga ;
         $data2 = [
-        'user_id'=> $user_id,
+            'user_id'=> $user_id,
           'pakan_id' => $key->pakan->id,
+          'code'  => $record_id,
           'total_harga'=> $hasil  
         ];
         array_push($totalPerPakan, $data2);
@@ -137,6 +141,7 @@ class MixingController extends Controller
    
     $all = [
         'user_id' => $user_id,
+        'code'  => $record_id,
         'protein' => $hasilProtein,
         'lemak' => $hasilLemak, 
         'kasar' => $hasilKasar, 
@@ -148,12 +153,18 @@ class MixingController extends Controller
     $totalPerPakan = $totalPerPakan;
     $totalHarga = [
         'user_id'=>$user_id,
+        'code'  => $record_id,
         'total_harga' => $apel
     ] ;
     
    
 
     Mixing::create($all);
+    Record::create([
+        'user_id' => $user_id,
+       'name' => 'HITUNGRANSUM',
+       'code' => $record_id 
+    ]);
     foreach ($totalPerPakan as $item) {
         totalPerPakan::create($item);
     }
@@ -180,9 +191,19 @@ class MixingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($code)
     {
-        //
+       $mixing=  Mixing::firstWhere('code', $code);
+       $total_per_pakan = totalPerPakan::where('code', $code)->get();
+       $total_semua_pakan = totalSemuaPakan::firstWhere('code', $code);
+
+       $data = [
+        'mixing' => $mixing,
+        'total_per_pakan' => $total_per_pakan,
+        'total_semua_pakan' => $total_semua_pakan
+       ];
+
+       return view('pages.dashboard.record.show', $data);
     }
 
     /**

@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-
+use App\Models\Mixing;
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -68,6 +68,12 @@ class User extends Authenticatable
     }
       public function total_semua_pakans(){
         return $this->hasMany(totalSemuaPakan::class);
+    }
+      public function mixings(){
+        return $this->hasMany(Mixing::class);
+    }
+      public function records(){
+        return $this->hasMany(Record::class);
     }
     
 }

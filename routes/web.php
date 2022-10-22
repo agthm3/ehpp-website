@@ -65,24 +65,15 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
 
     //middleware khusus untuk admin yang bisa masuk
     Route::middleware(['admin'])->group(function(){
-
+        Route::get('/show/{id}',[MixingController::class, 'show']);
         Route::get('mixing/add', [CartController::class, 'index']);
         Route::resource('mixing', MixingController::class);
-        // Route::resource('mixing', CartController::class);
         Route::get('mixing-store', [MixingController::class, 'store'])->name('hitungmixing');
         Route::resource('cartadd', CartController::class)->only([
             'store',
             'index',
             'create'
         ]);
-        // Route::resource('mixing', FrontendController::class);
-        // Route::resource('mixing', ProductController::class);
-        // // Route::resource('mixing.gallery', ProductGalleryController::class)->shallow()->only([
-        // //     'index', 
-        // //     'create', 
-        // //     'store',
-        // //     'destroy'
-        // // ]);
         Route::resource('transaction', TransactionController::class)->only([
             'index', 
             'show', 

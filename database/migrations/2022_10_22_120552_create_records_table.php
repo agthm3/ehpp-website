@@ -1,12 +1,11 @@
 <?php
 
-use App\Models\Pakan;
-use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
 
-class CreateTotalPerPakansTable extends Migration
+class CreateRecordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,12 +14,11 @@ class CreateTotalPerPakansTable extends Migration
      */
     public function up()
     {
-        Schema::create('total_per_pakans', function (Blueprint $table) {
+        Schema::create('records', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class);
-            $table->foreignIdFor(Pakan::class);
+            $table->string('name');
             $table->string('code');
-            $table->bigInteger('total_harga');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateTotalPerPakansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('total_per_pakans');
+        Schema::dropIfExists('records');
     }
 }

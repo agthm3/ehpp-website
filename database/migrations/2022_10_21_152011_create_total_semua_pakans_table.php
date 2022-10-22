@@ -17,6 +17,7 @@ class CreateTotalSemuaPakansTable extends Migration
         Schema::create('total_semua_pakans', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(User::class);
+            $table->string('code');
             $table->bigInteger('total_harga');
             $table->timestamps();
         });

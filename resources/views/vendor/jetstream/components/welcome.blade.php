@@ -44,7 +44,28 @@
                             <th>Aksi</th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        <tr>
+                            <td>
+                                adfa
+                            </td>
+                            <td>
+                                fda
+                            </td>
+                            <td>
+                                dfa
+                            </td>
+                            <td style="display: flex">
+                                <a href="'.route('dashboard.transaction.show', $item->id) . '"
+                                    class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Cetak </a>
+                                <a href="'.route('dashboard.transaction.show', $item->id) . '"
+                                    class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Show </a>
+                                <a href="'.route('dashboard.transaction.show', $item->id) . '"
+                                    class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Edit </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
                 </table>
             </div>
         </div>
