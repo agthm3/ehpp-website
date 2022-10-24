@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mixing;
 use App\Models\Record;
+use App\Models\totalPerPakan;
+use App\Models\totalSemuaPakan;
 use Illuminate\Http\Request;
 
 class RecordController extends Controller
@@ -27,6 +30,22 @@ class RecordController extends Controller
         //
     }
 
+    public function print($code){
+              $mixing=  Mixing::firstWhere('code', $code);
+       $total_per_pakan = totalPerPakan::where('code', $code)->get();
+       $total_semua_pakan = totalSemuaPakan::firstWhere('code', $code);
+             $record_id = auth()->user()->records->first()->code;
+            $mixing = Mixing::firstWhere('code', $record_id);
+
+       $data = [
+        'mixing' => $mixing,
+        'total_per_pakan' => $total_per_pakan,
+        'total_semua_pakan' => $total_semua_pakan,
+        'record' => $record_id
+       ];
+
+        return view('pages.dashboard.print.show', $data);
+    }
     /**
      * Store a newly created resource in storage.
      *

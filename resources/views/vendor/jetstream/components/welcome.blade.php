@@ -56,7 +56,7 @@
                                 dfa
                             </td>
                             <td style="display: flex">
-                                <a href="'.route('dashboard.transaction.show', $item->id) . '"
+                                <a href="'.route('print', $item->id) . '"
                                     class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Cetak </a>
                                 <a href="'.route('dashboard.transaction.show', $item->id) . '"
                                     class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2"> Show </a>

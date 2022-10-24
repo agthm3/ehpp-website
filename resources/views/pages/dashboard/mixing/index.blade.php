@@ -90,7 +90,7 @@
                       @empty
                           <p id="cart-empty" class=" text-center py-8">
                               Ooops... Cart is empty
-                              <a href="{{ route('index') }}" class="underline">Shop Now</a>
+                              <a href="{{ url('dashboard/pakan') }}" class="underline">Mixing Now</a>
                           </p>
                       @endforelse
                       <!-- END: ROW 1 -->

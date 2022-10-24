@@ -10,6 +10,7 @@ use App\Http\Controllers\PakanGalleryController;
 use App\Http\Controllers\PakanHitung;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProductGalleryController;
+use App\Http\Controllers\RecordController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -43,7 +44,7 @@ require __DIR__.'/auth.php';
         
 
         Route::post('/cart', [CartController::class, 'cartadd'])->name('cart-add');
-    
+        
         
     });
 
@@ -51,6 +52,7 @@ require __DIR__.'/auth.php';
 
     
 Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function (){
+   
     Route::get('/', [DashboardController::class, 'index'])->name('index');  //dashboard.index
 
         //My transaction routing
@@ -62,9 +64,12 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             'index', 
             'show', 
         ]);
+         Route::get('/print/{id}', [RecordController::class, 'print']);
+   
 
     //middleware khusus untuk admin yang bisa masuk
     Route::middleware(['admin'])->group(function(){
+       
         Route::get('/show/{id}',[MixingController::class, 'show']);
         Route::get('mixing/add', [CartController::class, 'index']);
         Route::resource('mixing', MixingController::class);

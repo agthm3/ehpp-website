@@ -59,7 +59,7 @@
             </div>
             <br>
             <hr>
-            <br>
+
             <div class="bg-white overflow-hidden shadow sm:rounded-lg mb-10">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="table-auto w-full">
@@ -79,7 +79,7 @@
             </div>
             <br>
             <hr>
-            <br>
+
             <div class="bg-white overflow-hidden shadow sm:rounded-lg mb-10">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="table-auto w-full">
@@ -96,7 +96,7 @@
             </div>
             <br>
             <hr>
-            <br>
+
 
             <div class="bg-white overflow-hidden shadow sm:rounded-lg mb-10">
                 <div class="p-6 bg-white border-b border-gray-200">

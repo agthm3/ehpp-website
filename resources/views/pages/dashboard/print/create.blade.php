@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Perhitungan HPP
+            Tambahkan Pakan Baru
         </h2>
     </x-slot>
 
@@ -36,139 +36,140 @@
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3 ">
                             <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                Bangunan Kandang
-
+                                Nama
                             </label>
-                            <p class="fs-6 text-muted">KANDANG Dengan kapasitas 3200 Ekor, Asumsi RUMAH Tahan
-                                20
-                                th ( 13
-                                priode )dan Battry tahan 6 tahun ( 4 priode )</p>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
                             <input type="text" value="{{ old('name') }}" name="name"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder=" ">
+                                placeholder="Nama Pakan">
                         </div>
                     </div>
 
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3 ">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Description
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <textarea value="{{ old('description') }}" name="description"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"> {!! old('description') !!}</textarea>
+                        </div>
+                    </div>
 
-                    {{-- AYAM SECTION --}}
-                    <br>
-
-                    <h3><b>AYAM</b></h3>
-                    <hr>
-                    <br>
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
                             <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                PULET (Harga Pulet/ Minggu)
+                                Harga
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
                             <input type="number" value="{{ old('price') }}" name="price"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="  ">
+                                placeholder="Rp">
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3 ">
-                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                HARGA AFKIR
-                            </label>
-                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
-                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
-                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="  ">
-                        </div>
-                    </div>
 
                     <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3 ">
+                        <div class="w-full px-3">
                             <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                DEPLESI AFKIR (%)
+                                Protein
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
+                            <input type="number" value="{{ old('protein') }}" name="protein"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="  ">
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3 ">
-                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                PRODUKSI (Asumsi sangat baik)
-                            </label>
-                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
-                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
-                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="  ">
-                        </div>
-                    </div>
-                    <br>
-
-                    <hr>
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3 ">
-                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                <b>PAKAN</b>
-                            </label>
-                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
-                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
-                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="  ">
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3 ">
-                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                <b>TENAGA KERJA (Kg/Telur)</b>
-                            </label>
-                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
-                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
-                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="  ">
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3 ">
-                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                <b>OVK (Obat + Vaksin dll)</b>
-                            </label>
-                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
-                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
-                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="  ">
-                        </div>
-                    </div>
-
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full px-3 ">
-                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
-                                <b>PLN/Transportasi</b>
-                            </label>
-                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
-                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
-                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
-                                placeholder="  ">
+                                placeholder="   %">
                         </div>
                     </div>
 
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full px-3">
-                            <button type="submit" style="background-color: #14532d"
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Lemak
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('lemak') }}" name="lemak"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder="   %">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Serat
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('serat') }}" name="serat"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder="   %">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Energi
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('energi') }}" name="energi"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder="   %">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Ca
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('ca') }}" name="ca"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder="   %">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                P
+                            </label>
+                            {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
+                            <input type="number" value="{{ old('p') }}" name="p"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder="   % ">
+                        </div>
+                    </div>
+
+
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-white text-gray-700 text-xs font-bold mb-2">
+                                Mixing
+                            </label>
+
+                            <input type="number" value="{{ old('mixing') }}" name="mixing"
+                                class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
+                                                                                        rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
+                                placeholder="   Kg">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                            <button type="submit" style="background-color:#064e3b"
                                 class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow-lg">
-                                Hitung HPP
+                                Simpan Pakan
                             </button>
                         </div>
                     </div>
