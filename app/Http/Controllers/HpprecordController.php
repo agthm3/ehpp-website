@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mixing;
-use App\Models\Record;
-use App\Models\totalPerPakan;
-use App\Models\totalSemuaPakan;
+use App\Models\hpprecord;
 use Illuminate\Http\Request;
 
-class RecordController extends Controller
+class HpprecordController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -30,22 +27,6 @@ class RecordController extends Controller
         //
     }
 
-    public function print($code){
-              $mixing=  Mixing::firstWhere('code', $code);
-       $total_per_pakan = totalPerPakan::where('code', $code)->get();
-       $total_semua_pakan = totalSemuaPakan::firstWhere('code', $code);
-             $record_id = auth()->user()->records->first()->code;
-            $mixing = Mixing::firstWhere('code', $record_id);
-
-       $data = [
-        'mixing' => $mixing,
-        'total_per_pakan' => $total_per_pakan,
-        'total_semua_pakan' => $total_semua_pakan,
-  
-       ];
-
-        return view('pages.dashboard.print.show', $data);
-    }
     /**
      * Store a newly created resource in storage.
      *
@@ -60,10 +41,10 @@ class RecordController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Record  $record
+     * @param  \App\Models\hpprecord  $hpprecord
      * @return \Illuminate\Http\Response
      */
-    public function show(Record $record)
+    public function show(hpprecord $hpprecord)
     {
         //
     }
@@ -71,10 +52,10 @@ class RecordController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Record  $record
+     * @param  \App\Models\hpprecord  $hpprecord
      * @return \Illuminate\Http\Response
      */
-    public function edit(Record $record)
+    public function edit(hpprecord $hpprecord)
     {
         //
     }
@@ -83,10 +64,10 @@ class RecordController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Record  $record
+     * @param  \App\Models\hpprecord  $hpprecord
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Record $record)
+    public function update(Request $request, hpprecord $hpprecord)
     {
         //
     }
@@ -94,10 +75,10 @@ class RecordController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Record  $record
+     * @param  \App\Models\hpprecord  $hpprecord
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Record $record)
+    public function destroy(hpprecord $hpprecord)
     {
         //
     }

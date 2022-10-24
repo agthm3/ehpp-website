@@ -57,14 +57,24 @@
                                                         class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
                                                         Cetak
                                                     </a>
-                                                    <a href="{{ url('/dashboard/show/' . $item->code) }}"
-                                                        class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
-                                                        Show
-                                                    </a>
-                                                    <a href="'.route('dashboard.transaction.show', $item->code) . '"
-                                                        class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
-                                                        Edit
-                                                    </a>
+
+                                                    @if ($item->name == 'HPPRECORD')
+                                                        <a href="{{ url('/dashboard/hpp/' . $item->code) }}"
+                                                            class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
+                                                            Show
+                                                        </a>
+                                                    @else
+                                                        <a href="{{ url('/dashboard/show/' . $item->code) }}"
+                                                            class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
+                                                            Show
+                                                        </a>
+                                                    @endif
+                                                    @if (Auth::user()->roles == 'ADMIN')
+                                                        <a href="'.route('dashboard.transaction.show', $item->code) . '"
+                                                            class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
+                                                            Edit
+                                                        </a>
+                                                    @endif
                                                 </td>
                                             </tr>
                                         @endforeach

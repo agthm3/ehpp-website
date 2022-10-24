@@ -14,7 +14,7 @@ class totalPerPakan extends Model
 
     protected $guarded=[
         'id', 
-        'code'
+
     ];
 
 

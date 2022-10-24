@@ -51,6 +51,7 @@
                     <table class="table-auto w-full">
                         <label for="">Total Harga/Pakan</label>
                         <tbody>
+
                             @foreach ($total_per_pakan as $item)
                                 <tr>
                                     <th class="border px-4 py-2 text-right">{{ $item->pakan->name }}</th>
@@ -64,6 +65,7 @@
                     <table class="table-auto w-full">
                         <label for="">Total Harga/Pakan</label>
                         <tbody>
+
                             @foreach ($total_per_pakan as $item)
                                 <tr>
                                     <th class="border px-4 py-2 text-right">{{ $item->pakan->name }}</th>

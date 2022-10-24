@@ -28,8 +28,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('dashboard.pakan.store') }}" class="w-full" method="post"
-                    enctype="multipart/form-data">
+                <form action="{{ url('dashboard/hpp') }}" class="w-full" method="post" enctype="multipart/form-data">
                     {{-- setiap inputan tambahkan csrf --}}
                     @csrf
 
@@ -44,7 +43,7 @@
                                 th ( 13
                                 priode )dan Battry tahan 6 tahun ( 4 priode )</p>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
+                            <input type="number" value="{{ old('bangunan') }}" name="bangunan"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder=" ">
@@ -64,7 +63,7 @@
                                 PULET (Harga Pulet/ Minggu)
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="number" value="{{ old('price') }}" name="price"
+                            <input type="number" value="{{ old('pulet') }}" name="pulet"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="  ">
@@ -77,7 +76,7 @@
                                 HARGA AFKIR
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
+                            <input type="number" value="{{ old('afkir') }}" name="afkir"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="  ">
@@ -90,7 +89,7 @@
                                 DEPLESI AFKIR (%)
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
+                            <input type="number" value="{{ old('deplesi') }}" name="deplesi"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="  ">
@@ -103,7 +102,7 @@
                                 PRODUKSI (Asumsi sangat baik)
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
+                            <input type="number" value="{{ old('produksi') }}" name="produksi"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="  ">
@@ -118,10 +117,16 @@
                                 <b>PAKAN</b>
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
+                            <select value="{{ old('pakan') }}" name="pakan"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="  ">
+                                @foreach ($record as $item)
+                                    <option value="{{ $item->code }}">
+                                        {{ $item->code }}
+                                    </option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
 
@@ -131,7 +136,7 @@
                                 <b>TENAGA KERJA (Kg/Telur)</b>
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
+                            <input type="number" value="{{ old('tenaga') }}" name="tenaga"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="  ">
@@ -144,7 +149,7 @@
                                 <b>OVK (Obat + Vaksin dll)</b>
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
+                            <input type="number" value="{{ old('ovk') }}" name="ovk"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="  ">
@@ -157,7 +162,7 @@
                                 <b>PLN/Transportasi</b>
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="text" value="{{ old('name') }}" name="name"
+                            <input type="number" value="{{ old('pln') }}" name="pln"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="  ">

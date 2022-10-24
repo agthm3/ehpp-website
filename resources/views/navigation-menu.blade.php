@@ -16,28 +16,29 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('dashboard.mixing.index') }}" :active="request()->routeIs('dashboard.mixing.index')">
+                        {{ __('Mixing ') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('dashboard.pakan.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
+                        {{ __('Pakan ') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('dashboard.hpp.create') }}" :active="request()->routeIs('dashboard.hpp  .index')">
+                        {{ __('HPP ') }}
+                    </x-jet-nav-link>
+                </div>
                 @if (Auth::user()->roles == 'ADMIN')
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('dashboard.mixing.index') }}" :active="request()->routeIs('dashboard.mixing.index')">
-                            {{ __('Mixing ') }}
-                        </x-jet-nav-link>
-                    </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('dashboard.pakan.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
-                            {{ __('Pakan ') }}
-                        </x-jet-nav-link>
-                    </div>
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link href="{{ route('dashboard.hpp.create') }}" :active="request()->routeIs('dashboard.hpp  .index')">
-                            {{ __('HPP ') }}
-                        </x-jet-nav-link>
-                    </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-jet-nav-link href="{{ route('dashboard.user.index') }}" :active="request()->routeIs('dashboard.user  .index')">
                             {{ __('User ') }}
                         </x-jet-nav-link>
                     </div>
                 @endif
+
 
             </div>
 

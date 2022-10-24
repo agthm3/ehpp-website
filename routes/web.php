@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\HppController;
 use App\Http\Controllers\MixingController;
 use App\Http\Controllers\MyTransactionController;
 use App\Http\Controllers\PakanController;
@@ -54,7 +55,8 @@ require __DIR__.'/auth.php';
 Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('dashboard')->group(function (){
    
     Route::get('/', [DashboardController::class, 'index'])->name('index');  //dashboard.index
-
+    Route::post('hpp', [HppController::class, 'store']);
+Route::get('hpp/{id}', [HppController::class, 'show']);
         //My transaction routing
         Route::resource('my-transaction', MyTransactionController::class)->only([
             'index', 
@@ -66,9 +68,6 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
         ]);
          Route::get('/print/{id}', [RecordController::class, 'print']);
    
-
-    //middleware khusus untuk admin yang bisa masuk
-    Route::middleware(['admin'])->group(function(){
        
         Route::get('/show/{id}',[MixingController::class, 'show']);
         Route::get('mixing/add', [CartController::class, 'index']);
@@ -86,12 +85,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             'update'
             
         ]);
-        Route::resource('user', UserController::class)->only([
-            'index', 
-            'edit',
-            'update',
-            'destroy'
-        ]);
+     
         Route::resource('hpp', ProductController::class)->only([
             'create',
         ]);  
@@ -119,5 +113,13 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             'hitung'
         ]);
 
+    //middleware khusus untuk admin yang bisa masuk
+    Route::middleware(['admin'])->group(function(){
+   Route::resource('user', UserController::class)->only([
+            'index', 
+            'edit',
+            'update',
+            'destroy'
+        ]);
     });
 });

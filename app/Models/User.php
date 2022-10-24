@@ -75,5 +75,7 @@ class User extends Authenticatable
       public function records(){
         return $this->hasMany(Record::class);
     }
-    
+      public function hpps(){
+        return $this->hasMany(hpp::class);
+    }
 }
