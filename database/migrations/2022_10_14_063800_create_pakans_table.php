@@ -19,14 +19,14 @@ class CreatePakansTable extends Migration
             $table->string('name');
             $table->longText('description');
             $table->bigInteger('price');
-            $table->bigInteger('protein');
-            $table->bigInteger('lemak');
-            $table->bigInteger('serat');
-            $table->bigInteger('energi');
-            $table->bigInteger('ca');
-            $table->bigInteger('p');
+            $table->string('protein');
+            $table->string('lemak');
+            $table->string('serat');
+            $table->string('energi');
+            $table->string('ca');
+            $table->string('p');
             $table->string('slug')->unique();
-            $table->softDeletes();
+          
             $table->timestamps();
         });
     }

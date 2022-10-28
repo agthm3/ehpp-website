@@ -102,10 +102,43 @@ class MixingController extends Controller
         return $protein_mixing;
     }
 
+      function hitungEnergi($value1){
+  
+        $cart = auth()->user()->carts;
+        
+        $hasilgenergi = [];
+
+        foreach ($cart as $key) {
+        $genergi = $key->pakan->$value1;   
+        array_push($hasilgenergi, $genergi);
+    }
+    $hasilSumEnergi = array_sum($hasilgenergi);
+
+    return $hasilSumEnergi;
+    }
+
+      function hitungKasar($value1){
+  
+        $cart = auth()->user()->carts;
+        
+        $hasilgkasar = [];
+
+        foreach ($cart as $key) {
+        $gkasar = $key->pakan->$value1;   
+        array_push($hasilgkasar, $gkasar);
+    }
+    $hasilSumkasar = array_sum($hasilgkasar);
+    $hasilAkhir = ($hasilSumkasar/100)*100;
+    return $hasilAkhir;
+    }
+
+
+    
+
     $hasilProtein = hitungMixing('gprotein');
     $hasilLemak = hitungMixing('glemak');
-    $hasilKasar = hitungMixing('gkasar');
-    $hasilEnergi = hitungMixing('genergi');
+    $hasilKasar = hitungKasar('gkasar');
+    $hasilEnergi = hitungEnergi('genergi');
     $hasilCa = hitungMixing('gca');
     $hasilP = hitungMixing('gp');
 
@@ -125,8 +158,9 @@ class MixingController extends Controller
         $apel = [];
         foreach ($cart as $key) {
         $harga = $key->pakan->price;
+        $mixing = $key->pakan->mixing;
         
-        $hasil = $harga * $harga ;
+        $hasil = $harga * $mixing ;
         $data2 = [
             'user_id'=> $user_id,
           'pakan_id' => $key->pakan->id,

@@ -30,19 +30,19 @@ class PakanRequest extends FormRequest
             'description' => 'required',
             'price'=>'required|integer', 
             'description' => 'required|string', 
-            'protein' => 'required|integer|max:10',
-            'lemak' => 'required|integer|max:10',
-            'serat' => 'required|integer|max:10',
-            'energi' => 'required|integer|max:10',
-            'ca' => 'required|integer|max:10',
-            'p' => 'required|integer|max:10',
-            'mixing'=> 'required|integer|max:10',
+            'protein' => 'required|varchar',
+            'lemak' => 'required|varchar',
+            'serat' => 'required|varchar',
+            'energi' => 'required|varchar',
+            'ca' => 'required|varchar',
+            'p' => 'required|varchar',
+            'mixing'=> 'required|varchar',
             'gprotein' => 'between:0,9999|required',
-            'glemak'=>'between:0,9999|required',
-            'gkasar' => 'between:0,9999|required',
-            'generg'=> 'between:0,9999|required',
-            'gca'=> 'between:0,9999|required',
-            'gp'=>'between:0,9999|required'
+            'glemak'=>'between:0,99999|required',
+            'gkasar' => 'between:0,99999|required',
+            'generg'=> 'between:0,99999|required',
+            'gca'=> 'between:0,99999|required',
+            'gp'=>'between:0,99999|required'
 
         ];
     }

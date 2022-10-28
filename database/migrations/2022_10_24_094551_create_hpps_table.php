@@ -15,6 +15,8 @@ class CreateHppsTable extends Migration
     {
         Schema::create('hpps', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(User::class);
+            $table->string('code');
             $table->bigInteger('bangunan');
             $table->bigInteger('pulet');
             $table->bigInteger('afkir');

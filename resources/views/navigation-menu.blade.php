@@ -22,12 +22,12 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard.pakan.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
+                    <x-jet-nav-link href="{{ route('dashboard.pakan.index') }}" :active="request()->routeIs('dashboard.pakan.index')">
                         {{ __('Pakan ') }}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard.hpp.create') }}" :active="request()->routeIs('dashboard.hpp  .index')">
+                    <x-jet-nav-link href="{{ route('dashboard.hpp.create') }}" :active="request()->routeIs('dashboard.hpp.create')">
                         {{ __('HPP ') }}
                     </x-jet-nav-link>
                 </div>

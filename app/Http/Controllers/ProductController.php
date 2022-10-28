@@ -39,7 +39,7 @@ class ProductController extends Controller
                     //menambahkan koma pada kolom price
                     ->editColumn('price', function($item){
                         return number_format($item->price);
-                    })
+                    })  
                     ->rawColumns(['action'])
                     -> make();
         }

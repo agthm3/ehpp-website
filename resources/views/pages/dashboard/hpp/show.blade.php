@@ -4,7 +4,7 @@
             Detail Pakan
         </h2>
     </x-slot>
-    @dd($hpp);
+    @dd($hpp_record);
 
     <div class="py-12">
 

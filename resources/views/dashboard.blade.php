@@ -59,7 +59,7 @@
                                                     </a>
 
                                                     @if ($item->name == 'HPPRECORD')
-                                                        <a href="{{ url('/dashboard/hpp/' . $item->code) }}"
+                                                        <a href="{{ url('/dashboard/hpprecord/' . $item->code) }}"
                                                             class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
                                                             Show
                                                         </a>

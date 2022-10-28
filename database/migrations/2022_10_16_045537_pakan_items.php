@@ -30,6 +30,6 @@ class PakanItems extends Migration
      */
     public function down()
     {
-        //
+      Schema::dropIfExists('pakan_items');
     }
 }

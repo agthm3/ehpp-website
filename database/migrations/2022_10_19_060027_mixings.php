@@ -21,12 +21,12 @@ class Mixings extends Migration
             #menambahkan kolom ke tabel transactions
             $table->foreignIdFor(User::class);
             $table->string('code');
-            $table->float('protein',3);
-            $table->float('lemak',3);
-            $table->float('kasar',3);
-            $table->float('energi',3);
-            $table->float('ca',3);
-            $table->float('p',3);
+            $table->string('protein');
+            $table->string('lemak');
+            $table->string('kasar');
+            $table->string('energi');
+            $table->string('ca');
+            $table->string('p');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -39,6 +39,6 @@ class Mixings extends Migration
      */
     public function down()
     {
-        //
+ Schema::dropIfExists('mixings');
     }
 }

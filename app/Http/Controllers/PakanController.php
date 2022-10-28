@@ -63,21 +63,35 @@ class PakanController extends Controller
      */
     public function store(Request $request, Pakan $pakan)
     {
-        $data = new Pakan;
 
+    
+        //      $data =$request->validate([
+        //     'lemak'=> 'required |numeric',
+        //     'protein' => 'required |numeric',
+        //     'serat' =>'required |numeric',
+        //     'energi' =>'required |numeric',
+        //     'name' =>'required |string',
+        //     'ca' =>'required |numeric',
+        //     'p' =>'required |numeric',
+        //     'price' => 'required |numeric',
+        //     'description' => 'string'
+    
+        // ]);
+            $data = new Pakan;
         $protein = $request->protein;
         $lemak = $request->lemak;
         $serat = $request->serat;
         $energi = $request->energi;
+      
         $ca = $request->ca;
         $p = $request->p;
         $mixing = $request->mixing;
-        $gprotein = ((int)$protein * $mixing)/10000;
-        $glemak = ((int)$lemak * $mixing)/10000;
-        $gserat = ((int)$serat * $mixing)/10000;
-        $genergi = ((int)$energi * $mixing)/10000;
-        $gca = ((int)$ca * $mixing)/10000;
-        $gp = ((int)$p * $mixing)/10000;
+        $gprotein = (( $protein * $mixing)/10000)*100;
+        $glemak = (( $lemak * $mixing)/10000)*100;
+        $gserat = (( $serat * $mixing)/10000)*100;
+        $genergi = ( $energi * $mixing)/100;
+        $gca = (($ca * $mixing)/10000)*100;
+        $gp = (( $p * $mixing)/10000)*100;
         
         $data['slug']= Str::slug($request->name);
         $data->name = $request->name;
@@ -101,16 +115,6 @@ class PakanController extends Controller
         $data->gca = $gca;
         $data->gp = $gp;
         
-
-        // return dd($data);
-        // Pakan::create($data);
-        // $mix = $request->mixing;
-        // $prote = $request->protein;
-        // $desc = $request->description;  
-        // $gprotein = ((int)$mix*$prote)/10000;
-
-        // $data['gprotein'] = $gprotein;       
-        // $data['desc']= $desc;
 
 
         $data->save();

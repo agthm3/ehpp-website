@@ -64,7 +64,7 @@
                                 Harga
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="number" value="{{ old('price') }}" name="price"
+                            <input type="text" value="{{ old('price') }}" name="price"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="Rp">
@@ -78,7 +78,7 @@
                                 Protein
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="number" value="{{ old('protein') }}" name="protein"
+                            <input type="text" value="{{ old('protein') }}" name="protein"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="   %">
@@ -91,7 +91,7 @@
                                 Lemak
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="number" value="{{ old('lemak') }}" name="lemak"
+                            <input type="text" value="{{ old('lemak') }}" name="lemak"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="   %">
@@ -104,7 +104,7 @@
                                 Serat
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="number" value="{{ old('serat') }}" name="serat"
+                            <input type="text" value="{{ old('serat') }}" name="serat"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="   %">
@@ -117,7 +117,7 @@
                                 Energi
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="number" value="{{ old('energi') }}" name="energi"
+                            <input type="text" value="{{ old('energi') }}" name="energi"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="   %">
@@ -130,7 +130,7 @@
                                 Ca
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="number" value="{{ old('ca') }}" name="ca"
+                            <input type="float" value="{{ old('ca') }}" name="ca"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="   %">
@@ -143,7 +143,7 @@
                                 P
                             </label>
                             {{-- fungsi dari function "old" inputan akan tetap ada walapun salah --}}
-                            <input type="number" value="{{ old('p') }}" name="p"
+                            <input type="text" value="{{ old('p') }}" name="p"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="   % ">
@@ -158,7 +158,7 @@
                                 Mixing
                             </label>
 
-                            <input type="number" value="{{ old('mixing') }}" name="mixing"
+                            <input type="text" value="{{ old('mixing') }}" name="mixing"
                                 class="block w-full bg-gray-200 text-gray-700 border border-gray-200 
                                                                                         rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus-border-gray-500"
                                 placeholder="   Kg">
