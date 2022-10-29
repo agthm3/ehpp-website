@@ -1,44 +1,58 @@
 '<x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Detail Pakan
+            Hpp Detail
         </h2>
     </x-slot>
-    @dd($hpp_record);
-
+    <style>
+        .header-hpp {
+            text-align: center;
+            font-weight: bolder;
+        }
+    </style>
+    @dd($hpp);
     <div class="py-12">
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
-            <h2 class="font-semibold text-lg text-gray-800 leading-tight mb-5">Pakan Detail</h2>
-            <br>
-            <form action="" method="POST">
-                @csrf
 
-                <button class="bg-green-500 text-white rounded-md px-6 py-1 m-2" type="submit">Hitung</button>
-            </form>
-            <br>
-            <hr>
+            <table class="table table-striped table-bordered">
 
-
-
-            <div class="col-lg-6"><a href="" class="bg-green-500 text-white rounded-md px-6 py-1 m-2">
-                    Edit </a>
-
-
-
-            </div>
-
-
-
-
-
-            <div class="row">
-
-
-
-            </div>
-
+                <thead>
+                    <h1 class="header-hpp">PERHITUNGAN HARGA POKOK PENJUALAN ( HPP ) TELUR
+                    </h1>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Jenis</th>
+                        <th scope="col">Keterangan</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">A.</th>
+                        <td><b>Bangunan Kandang</b></td>
+                        <td></td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>Kandang Dengan Kapasitas 3200 Ekor, Asumsi Rumah tahan 20 thn (13 periode) dan Battry tahan
+                            6 tahun (4 periode) 70.000.000</td>
+                        <td>
+                            @foreach ($hpp as $item)
+                                {{ $item->bangunan }} /Kg Telur
+                            @endforeach
+                        </td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </x-app-layout>

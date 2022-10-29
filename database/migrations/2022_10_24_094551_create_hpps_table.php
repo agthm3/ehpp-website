@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\User;
 
 class CreateHppsTable extends Migration
 {
@@ -17,14 +18,14 @@ class CreateHppsTable extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->string('code');
-            $table->bigInteger('bangunan');
-            $table->bigInteger('pulet');
-            $table->bigInteger('afkir');
-            $table->bigInteger('deplesi');
-            $table->bigInteger('produksi');
-            $table->bigInteger('tenaga');
-            $table->bigInteger('ovk');
-            $table->bigInteger('pln');
+            $table->string('bangunan');
+            $table->string('pulet');
+            $table->string('afkir');
+            $table->string('deplesi');
+            $table->string('produksi');
+            $table->string('tenaga');
+            $table->string('ovk');
+            $table->string('pln');
             $table->timestamps();
         });
     }

@@ -19,8 +19,9 @@ class HppController extends Controller
     public function index($id)
     {
        $data['hpp_record'] = hpprecord::where('code', $id)->get();
+       $datas['hpp'] = hpp::where('code', $id)->get();
 
-       return view('pages.dashboard.hpp.show',$data);
+       return view('pages.dashboard.hpp.show',$data, $datas);
     }
 
     /**;
@@ -54,12 +55,13 @@ class HppController extends Controller
         ]);
         $hargapulet = $request->pulet * 25;
         $afkir_per_ekor = $request->afkir/12;
-        $deplesi_harga = $afkir_per_ekor * 0.01*(100-$request->deplesi);
+        $deplesi_harga = $afkir_per_ekor * 0.01*(100-($request->deplesi));
         $total_biaya_ayam = ($hargapulet-$deplesi_harga)/ $request->produksi;
 
         $total_harga = totalSemuaPakan::firstWhere('code', $request->pakan)->total_harga;
+        // $total_harga = 6708;
 
-        $biaya_pakan = $total_harga * 2.5;
+        $biaya_pakan = ($total_harga/100) * 2.5;
         $biaya_pakan_per_rak = $biaya_pakan * 1.8;
 
         $tenaga_kerja_per_rak = $request->tenaga * 1.8;
@@ -92,6 +94,35 @@ class HppController extends Controller
             'pln_ekor_per_bulan' => $pln_ekor_per_bulan,
             'hpp' => $hpp 
         ];
+  
+        $result2 = new hpp;
+
+        $result2->bangunan = $request->bangunan;
+        $result2->bangunan = $request->bangunan;
+        $result2->pulet = $request->pulet;
+        $result2->afkir = $request->afkir;
+        $result2->deplesi = $request->deplesi;
+        $result2->produksi = $request->produksi;
+        $result2->tenaga = $request->tenaga;
+        $result2->ovk = $request->ovk;
+        $result2->pln = $request->pln;
+        $result2->user_id = $user_id;
+        $result2->code = $record_id;
+
+        // $result2 = [
+        //     'code'=> $record_id,
+        //     'user_id' => $user_id, 
+        //     'bangunan ' => $bangunan, 
+        //     'pulet ' => $pulet, 
+        //     'afkir ' => $afkir, 
+        //     'deplesi ' => $deplesi, 
+        //     'produksi ' => $produksi, 
+        //     'tenaga ' => $tenaga, 
+        //     'ovk ' => $ovk, 
+        //     'pln ' => $pln, 
+        // ];
+    $result2->save();
+        // hpp::create($result2);
       hpprecord::create($result);
       Record::create([
         'code' => $record_id,
