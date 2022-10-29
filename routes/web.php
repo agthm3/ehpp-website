@@ -57,6 +57,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
     Route::get('/', [DashboardController::class, 'index'])->name('index');  //dashboard.index
     Route::post('hpp', [HppController::class, 'store']);
     Route::get('hpprecord/{id}', [HppController::class, 'index']);
+   
     // Route::get('hpp/{id}', [HppController::class, 'show']);
         //My transaction routing
         Route::resource('my-transaction', MyTransactionController::class)->only([
@@ -68,7 +69,7 @@ Route::middleware(['auth:sanctum', 'verified'])->name('dashboard.')->prefix('das
             'show', 
         ]);
          Route::get('/print/{id}', [RecordController::class, 'print']);
-   
+         Route::get('/print/hpprecord/{id}', [HppController::class, 'print']);
        
         Route::get('/show/{id}',[MixingController::class, 'show']);
         Route::get('mixing/add', [CartController::class, 'index']);

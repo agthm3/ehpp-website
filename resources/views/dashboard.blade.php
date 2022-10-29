@@ -52,23 +52,32 @@
                                                     {{ $item->code }}
                                                 </td>
                                                 <td style="display: flex; justify-content:center">
-                                                    <a href="{{ url('/dashboard/print/' . $item->code) }}"
-                                                        onclick="opennewtab()"
-                                                        class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
-                                                        Cetak
-                                                    </a>
+
 
                                                     @if ($item->name == 'HPPRECORD')
+                                                        <a href="{{ url('/dashboard/print/hpprecord/' . $item->code) }}"
+                                                            onclick="opennewtab()"
+                                                            class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
+                                                            Cetak
+                                                        </a>
                                                         <a href="{{ url('/dashboard/hpprecord/' . $item->code) }}"
                                                             class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
                                                             Show
                                                         </a>
                                                     @else
+                                                        <a href="{{ url('/dashboard/print/' . $item->code) }}"
+                                                            onclick="opennewtab()"
+                                                            class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
+                                                            Cetak
+                                                        </a>
                                                         <a href="{{ url('/dashboard/show/' . $item->code) }}"
                                                             class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
                                                             Show
                                                         </a>
                                                     @endif
+
+
+
                                                     @if (Auth::user()->roles == 'ADMIN')
                                                         <a href="'.route('dashboard.transaction.show', $item->code) . '"
                                                             class="bg-gray-500 text-white rounded-md px-2 py-1 m-2 mr-2">
