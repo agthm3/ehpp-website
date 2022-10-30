@@ -18,6 +18,11 @@
                                 <a href="{{ route('dashboard.index') }}"
                                     class="hover:underline py-1 block">Dashboard</a>
                             </li>
+                            <li>
+                                <a href="https://drive.google.com/file/d/1-XE06tvokAEkj1iwGBfCL-hI9Kxnd7ir/view?usp=share_link"
+                                    class="hover:underline py-1 block">Download
+                                    panduan teknis penggunaan EHPP</a>
+                            </li>
                         </ul>
                     </div>
                     <div class="px-4 w-full md:w-2/12 mb-4 md:mb-0 accordion">
@@ -46,7 +51,7 @@
     <!-- START: FOOTER -->
     <footer class="flex text-center px-4 py-8 justify-center">
         <p class="text-sm">
-            Copyright 2022 • Made with ❤ <a href="https://www.instagram.com/agthm_.3/">Agthm</a>. |
+            Copyright 2022 • Made with ❤ <a href="https://www.instagram.com/agthm_.3/">Agthm</a>.
 
 
         </p>

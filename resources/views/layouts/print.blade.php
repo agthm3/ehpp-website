@@ -127,11 +127,8 @@
     <x-jet-banner />
 
     <div class="min-h-screen bg-gray-100">
-
-
-
         <!-- Page Content -->
-        <main>
+        <main style="margin-top: -100px; font-size:13px">
             @yield('content')
         </main>
     </div>

@@ -179,31 +179,31 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
         </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('dashboard.mixing.index') }}" :active="request()->routeIs('dashboard.mixing.index')">
+                {{ __('Mixing') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('dashboard.pakan.index') }}" :active="request()->routeIs('dashboard.pakan.index')">
+                {{ __('Pakan') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('dashboard.hpp.create') }}" :active="request()->routeIs('dashboard.hpp.create')">
+                {{ __('HPP') }}
+            </x-jet-responsive-nav-link>
+        </div>
         @if (Auth::user()->roles == 'ADMIN')
-            {
-            <div class="pt-2 pb-3 space-y-1">
-                <x-jet-responsive-nav-link href="{{ route('dashboard.mixing.index') }}" :active="request()->routeIs('dashboard.mixing.index')">
-                    {{ __('Products') }}
-                </x-jet-responsive-nav-link>
-            </div>
-            <div class="pt-2 pb-3 space-y-1">
-                <x-jet-responsive-nav-link href="{{ route('dashboard.transaction.index') }}" :active="request()->routeIs('dashboard.transaction.index')">
-                    {{ __('Transaction') }}
-                </x-jet-responsive-nav-link>
-            </div>
             <div class="pt-2 pb-3 space-y-1">
                 <x-jet-responsive-nav-link href="{{ route('dashboard.user.index') }}" :active="request()->routeIs('dashboard.user.index')">
                     {{ __('User') }}
                 </x-jet-responsive-nav-link>
             </div>
-            }
         @endif
 
-        <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('dashboard.my-transaction.index') }}" :active="request()->routeIs('dashboard.my-transaction.index')">
-                {{ __('My Transaction') }}
-            </x-jet-responsive-nav-link>
-        </div>
+
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
