@@ -29,11 +29,11 @@
                                 class="text-black md:text-{{ \Route::current()->getname() == 'index' ? 'black' : '' }} hover:underline">Login</a>
                         </li>
 
-                        <li class="mx-3 py-6 md:py-0">
-                            {{-- Pada kasus yang sama, menggunakan ternary operator untuk menantukan apakah navbar sedang berada di index atau bukan --}}
+                        {{-- <li class="mx-3 py-6 md:py-0">
+                          
                             <a href="{{ route('register') }}"
                                 class="text-black md:text-{{ \Route::current()->getname() == 'index' ? 'black' : '' }} hover:underline">Register</a>
-                        </li>
+                        </li> --}}
                     @endguest
                 </ul>
             </div>

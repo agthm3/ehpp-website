@@ -12,8 +12,8 @@
                 <br class="hidden lg:block" />secara digital dengan e-hpp.com
             </h2>
             <div>
-                <a href="{{ route('register') }}" style="background-color: #14532d; color:white; font-style:bold"
-                    class="bg-pink-400 text-black hover:bg-black hover:text-pink-400 rounded-full px-8 py-3 mt-4 inline-block flex-none transition duration-200">DAFTAR
+                <a href="{{ route('login') }}" style="background-color: #14532d; color:white; font-style:bold"
+                    class="bg-pink-400 text-black hover:bg-black hover:text-pink-400 rounded-full px-8 py-3 mt-4 inline-block flex-none transition duration-200">MASUKKAN
                     AKUN
                 </a>
             </div>

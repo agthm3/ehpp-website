@@ -10,9 +10,7 @@
                     <div class="px-4 w-full md:w-2/12 mb-4 md:mb-0 accordion">
                         <h5 class="text-lg font-semibold mb-2 relative">Quick Button</h5>
                         <ul class="h-0 invisible md:h-auto md:visible overflow-hidden">
-                            <li>
-                                <a href="{{ route('register') }}" class="hover:underline py-1 block">Register</a>
-                            </li>
+
                             <li>
                                 <a href="{{ route('login') }}" class="hover:underline py-1 block">Login</a>
                             </li>
